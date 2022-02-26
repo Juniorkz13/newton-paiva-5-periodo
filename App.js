@@ -1,20 +1,47 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// regra 1 - Importar o React
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+const TextoEmBranco = ({ texto = '' }) => {
+    return <Text style={estilos.texto}>{`${texto}`}</Text>
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// regra 2 - Criar e exportar uma função
+export default () => {
+    // regra 3 - Retornar um elemento JSX
+    // regra 4 - Retornar somente um elemento JSX
+    // regra 5 - Texto somente dentro da TAG <Text></Text>
+    // regra 6 - Não usar TAGs HTML
+    return (
+        <View style={estilos.principal}>
+            <View style={estilos.viewMapa}></View>
+            <View style={estilos.viewTexto}>
+                <TextoEmBranco texto="escreve qualquer coisa"></TextoEmBranco>
+            </View>
+        </View>
+    )
+}
+
+const estilos = StyleSheet.create({
+    principal: {
+        flex: 1,
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        backgroundColor: 'rgb(209, 143, 82)'
+    },
+    texto: {
+        fontSize: 50,
+        color: 'rgb(40, 44, 52)',
+        fontWeight: 'bold'
+    },
+    viewMapa: {
+        flex: 0.5,
+        backgroundColor: 'rgb(137, 189, 99)'
+    },
+    viewTexto: {
+        flex: 0.5,
+        backgroundColor: 'rgb(255, 255, 255)',
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+})
