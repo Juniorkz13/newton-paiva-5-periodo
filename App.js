@@ -16,7 +16,7 @@ export default () => {
         <View style={estilos.principal}>
             <View style={estilos.viewMapa}></View>
             <View style={estilos.viewTexto}>
-                <TextoEmBranco texto="escreve qualquer coisa"></TextoEmBranco>
+                <TextoEmBranco texto="testando"></TextoEmBranco>
             </View>
         </View>
     )
